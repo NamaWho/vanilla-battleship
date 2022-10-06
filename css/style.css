@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #f2bf58;
+  --secondary-color: #b98440;
+  --third-color: #ffa500;
+  --scale: 0.1;
+  --space: 8vmin;
+  
+  --coffee: #6C4C2Fff;
+  --dark-lava: #4E473Fff;
+  --khaki-web: #CCB4A1ff;
+  --liver-chestnut: #9D683Fff;
+  --dark-lava-2: #45392Cff;
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --scale: 0;
+  }
+}
+
+html,
+body {
+  background-color: var(--khaki-web);
+  color: var(--dark-lava);
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Apple Chancery", "Chancery", cursive;
+}
+
+@font-face { 
+  font-family: "Chancery";
+  src: url('../fonts/apple-chancery-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/apple-chancery-webfont.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/apple-chancery-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/apple-chancery-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+} 
+
+input {
+  transition: transform 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type="radio"]::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: var(--liver-chestnut);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.toggleAudio_div {
+  position: fixed;
+  left: 3vw;
+  bottom: 3vh;
+  width: 3em;
+  height: 3em;
+}
+
+.toggleAudio_btn {
+  width: 60px;
+  height: 60px;
+  background: var(--coffee);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.toggleAudio_btn:hover {
+  background: var(--liver-chestnut);
+}
+
+.toggleAudio_btn img {
+  transform: scale(0.4);
+}
+
+.gamereview_modal, .gridsetter_modal {
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  position: relative;
+  height: auto;
+  max-height: 90vh;
+  max-width: 65vw;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.gamereview_close_btn, .gridsetter_close_btn {
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 0;
+  width: 4vw;
+  height: 4vh;
+  cursor: pointer;
+}

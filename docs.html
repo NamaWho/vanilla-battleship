@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentazione</title>
+
+    <style>
+        * {
+            margin: 0; 
+            padding: 0;
+        }
+
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            font-size: 18px;
+            align-items: center;
+            text-align: justify;
+        }
+
+        header {
+            text-align: center;
+            width: 60%;
+            position: relative;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            background-color: #B57B4F;
+            color: white;
+        }
+
+        header img {
+            width: inherit;
+            transform: scale(0.6);   
+        }
+
+        header h1 {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        section {
+            padding: 2vh 2vh 1vh 2vh;
+            width: 60%;
+            position: relative;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3 {
+            color: #B57B4F;
+        }
+
+        .third p, .third ul, .third ol {
+            margin-bottom: 1vh;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="./images/unipi.svg" alt="">
+    </header>
+    <section class="first">
+        <h3>Introduzione</h3>
+        <p>Il progetto presentato simula il classico gioco della Battaglia Navale, rivisitato in chiave storica sui passi della famosa Battaglia della Meloria. Il progetto offre la possibilità di rievocare la storica battaglia attraverso l'interazione con un bot appositamente programmato per permettere all'utente di giocare.</p>
+    </section>
+    <section class="second">
+        <h3>Funzionalità</h3>
+        <ul style="margin-left: 2vh;">
+            <li>Registrazione Account e Login</li>
+            <li>Visualizzazione Ranking Generale</li>
+            <li>Visualizzazione Storico Partite giocate</li>
+            <li>Visualizzazione Snapshot di una partita giocata</li>
+            <li>Visualizzazione guida per il posizionamento delle navi</li>
+            <li>Gioco in single player con un bot "intelligente"</li>
+        </ul>
+    </section>
+    <section class="third">
+        <h3>Regole del Gioco</h3>
+        <p>Le regole della "Battaglia della Meloria" sono state ispirate da una sottile variante della classica battaglia navale, consultabile a <a href="https://www.giochi-da-tavolo.it/battaglia-navale/">questo link</a>. Nessuna variazione sostanziale, solamente tanto divertimento!</p>
+        <p>Navi a disposizione:</p>
+        <ul style="margin-left: 2vh;">
+            <li>1 Nave da 5 caselle</li>
+            <li>1 Nave da 4 caselle</li>
+            <li>2 Navi da 3 caselle</li>
+            <li>3 Navi da 2 caselle</li>
+            <li>3 Navi da 1 casella</li>
+        </ul>
+        <p>Step del gioco:</p>
+        <ol style="margin-left: 2vh;">
+            <li>Ogni avversario posiziona segretamente le dieci navi sulla griglia da gioco. Ogni nave deve essere posizionata orizzontalmente o verticalmente, non in diagonale. Le navi non possono toccarsi, e fra ogni nave deve intercorrere almeno una cella d'acqua. Non è possibile modificare la posizione delle navi dopo l’inizio del gioco.</li>
+            <li>I giocatori, a turno, svolgono le sparatorie, sparando un colpo a turno per attaccare le navi nemiche. Per sparare sarà necessario cliccare su una cella avversaria non ancora colpita e sperare di andare a segno!</li>
+            <li>Quando tutte le celle di una nave vengono colpite, la nave è affondata.</li>
+            <li>Il gioco termina quando un giocatore ha affondato tutte le navi avversarie.</li>
+        </ol>
+    </section>
+    <section class="fourth">
+        <h3>Validazione</h3>
+        <p>Tutti i file sono stati validati correttamente attraverso i tool forniti dalle specifiche di progetto. Nota: come riportato a <a href="https://stackoverflow.com/questions/57661659/w3c-css-validation-parse-error-on-variables">questo link</a>, il validator non riconosce le variabili dinamiche nei file .css</p>
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                    alt="CSS Valido!" />
+            </a>
+        </p>
+    </section>
+    <section class="fourth">
+        <h3>Librerie Esterne</h3>
+        <ul>
+            <li>Font Awesome (<a href="https://github.com/FortAwesome/Font-Awesome/blob/6.x/LICENSE.txt">Licenza</a>)</li>
+            <li>Ion Icons (<a href="https://github.com/ionic-team/ionicons/blob/main/LICENSE">Licenza</a>)</li>
+        </ul>    
+    </section>
+</body>
+</html>

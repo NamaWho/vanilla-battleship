@@ -1,0 +1,257 @@
+.logout {
+  position: fixed;
+  right: 3vw;
+  bottom: 3vh;
+  width: 3em;
+  height: 3em;
+}
+
+.logout_btn {
+  width: 60px;
+  height: 60px;
+  background: var(--coffee);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.logout_btn:hover {
+  background: var(--liver-chestnut);
+}
+
+/* .logout_btn > img {
+  width: inherit;
+  height: inherit;
+} */
+
+.logout_btn img {
+  transform: scale(0.4);
+}
+
+header {
+  background-image: url("../images/header_background1.jpg");
+  background-color: #a2a2a2;
+  height: 30vh;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  height: 1vh;
+  background-color: var(--dark-lava-2);
+  width: 100%;
+  bottom: -1vh;
+  border-radius: 0 0 10px 10px;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+  border: 2px solid black;
+}
+
+header div {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 2vh 3vh;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.username {
+  color: var(--khaki-web);
+  font-weight: 500;
+}
+
+.section {
+  margin-top: 4vh;
+  padding-bottom: 2vh;
+}
+
+/* ----- Play Section ----- */
+
+.play button {
+  padding: 2vh 3vh;
+  margin-top: 4vh;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--coffee);
+  transition: background-color 0.2s;
+  color: white;
+  animation: pulse 1500ms infinite;
+}
+
+.play button:hover {
+  background-color: var(--liver-chestnut);
+}
+
+/* ------------------------ */
+
+/* ----- Game Section ----- */
+
+.game_item {
+  display: flex;
+  margin: 2vh 3vh;
+  border-radius: 10px;
+  background-color: rgb(219, 218, 218);
+  padding: 2vh 1em;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.win {
+  color: rgb(39, 131, 39);
+}
+
+.defeat {
+  color: rgb(194, 71, 71);
+}
+
+.view_btn {
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}
+
+.view_btn {
+  background-color: rgb(39, 131, 39);
+}
+
+.gamereview_modal {
+  /* top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  position: relative;
+  height: auto;
+  max-width: 55vw;
+  background-color: white;
+  border-radius: 10px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* .gamereview_close_btn {
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 0;
+  width: 4vw;
+  height: 4vh;
+  cursor: pointer;
+} */
+
+.gamereview_modal div {
+  margin: 6vh 2vh 4vh 2vh;
+}
+
+.gamereview_modal table {
+  text-align: center;
+}
+
+.gamereview_player td, 
+.gamereview_enemy td {
+    height: 4vh !important;
+    width: 4vh !important;
+}
+/* .game_item span {
+    position: absolute;
+    left: 1em;
+}
+
+.game_item_btn {
+    position: absolute;
+    right: 1em;
+} */
+
+/* ------------------------ */
+
+/* ----- Ranking Section ----- */
+
+.ranking_list {
+  margin-bottom: 4vh;
+}
+
+.ranking_list table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.ranking_list table th {
+  border-bottom: 3px solid black;
+  border-collapse: collapse;
+  font-size: 20px;
+  padding: 2vh 1vh;
+}
+
+.ranking_list table td {
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+  padding: 1vh 1vh;
+}
+
+.logo_ranking {
+  border-radius: 50%;
+  height: 5vh;
+  width: 5vh;
+  border: 1px solid black;
+}
+
+/* ------------------------ */
+
+.game_list,
+.ranking_list {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - var(--space));
+  background-color: white;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.game_list::before, .ranking_list::before {
+  content: "";
+  display: block;
+  height: 1vh;
+  background-color: var(--dark-lava-2);
+  width: 100%;
+  top: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.game_list h1,
+.ranking_list h1 {
+  font-size: 30px;
+  margin: 2vh;
+  color: var(--liver-chestnut);
+}

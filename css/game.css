@@ -1,0 +1,463 @@
+.gridsetter_section,
+.game_section {
+  height: 100vh !important;
+  width: 100%;
+}
+
+.container_setships {
+  max-width: 65vw;
+  width: calc(100% - var(--space));
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  transform: translateY(-50%) translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.ships_container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3vh;
+  height: 60vh;
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ships_container::before {
+  display: block;
+  content: "";
+  height: 1vh;
+  background-color: var(--dark-lava);
+  border-radius: 10px 10px 0 0;
+}
+
+.ships_container::after {
+  display: block;
+  content: "";
+  height: 1vh;
+  background-color: var(--dark-lava);
+  border-radius: 0 0 10px 10px;
+}
+
+.grid {
+  background-color: white;
+  border-collapse: collapse;
+}
+
+.gridsetter_grid_div::before, .gamereview_enemy_div::before, .gamereview_player_div::before {
+  display: block;
+  content: "";
+  height: 1vh;
+  background-color: var(--dark-lava);
+  border-radius: 10px 10px 0 0;
+}
+
+.gridsetter_grid_div::after, .gamereview_enemy_div::after, .gamereview_player_div::after {
+  display: block;
+  content: "";
+  height: 1vh;
+  background-color: var(--dark-lava);
+  border-radius: 0 0 10px 10px;
+}
+
+.grid td {
+  width: 6vh;
+  height: 6vh;
+  border: 1px solid black;
+}
+
+.cell {
+  /* cursor: pointer; */
+}
+
+.row_coord {
+  border-bottom: 3px solid black !important;
+}
+.col_coord {
+  border-right: 3px solid black !important;
+}
+
+.ship {
+  border-collapse: collapse;
+  margin: 0.5vh;
+  cursor: pointer;
+  height: 5vh;
+}
+
+.ship td {
+  border: 1px solid black;
+  width: 3vh;
+  height: 3vh;
+}
+
+.ship:not(.ship_positioned):hover {
+  transform: scale(1.1);
+}
+
+.ship_selected td {
+  background-color: var(--coffee);
+}
+
+.ship_positioned td {
+  background-color: grey;
+  border: none;
+  cursor: default;
+}
+
+.setship_valid {
+  background-color: antiquewhite;
+  cursor: grabbing;
+}
+
+.setship_ship {
+  background-color: var(--liver-chestnut);
+}
+
+.setship_ship:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.setship_invalid {
+  background-color: rgb(194, 71, 71) !important;
+  cursor: default !important;
+}
+
+.btn_setship {
+  border-radius: 10px;
+  padding: 2vh 3vh;
+  margin: 2vh 2vh;
+  border: none;
+  transition: background-color 0.2s;
+  color: white;
+}
+
+.b_s_rotateship {
+  background-color: var(--coffee);
+}
+
+.b_s_rotateship:hover {
+  background-color: var(--liver-chestnut);
+}
+
+.b_s_play {
+  background-color: rgb(39, 131, 39);
+}
+
+.b_s_play:hover {
+  background-color: rgb(69, 189, 69);
+}
+
+.gridsetter_modal {
+  text-align: justify;
+  padding-bottom: 2vh;
+  overflow: scroll;
+  font-size: 20px;
+}
+
+.gridsetter_modal h4 {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 800;
+  padding-top: 2vh;
+}
+
+.gridsetter_modal h4, .gridsetter_modal p {
+  width: 90%;
+  margin: auto;
+}
+
+.gridsetter_modal img:not(.gridsetter_close_btn) {
+  max-width: 40%;
+  margin-left: 50%;
+  margin-top: 2vh;
+  transform: translateX(-50%);
+}
+
+/* ---------------------- GAME ------------------------- */
+
+.container_game {
+  max-width: 85vw;
+  width: calc(100% - var(--space));
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.game_section_div {
+  display: flex;
+  margin-bottom: 3vh;
+}
+
+.game_section_div:not(.logos) {
+  justify-content: space-around;
+}
+
+.game_logo {
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+}
+
+.game_team_player, .game_team_enemy {
+  margin-top: 2vh;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.player_board,
+.enemy_board {
+  display: inline-block;
+}
+
+.player_board::before,
+.player_board::after,
+.enemy_board::before,
+.enemy_board::after {
+  display: block;
+  content: "";
+  height: 1vh;
+  background-color: var(--dark-lava-2);
+}
+
+.vulnerable::before,
+.vulnerable::after {
+  display: block;
+  content: "";
+  height: 1vh;
+  background-color: #45bd45;
+  animation: pulse_once 1500ms;
+}
+
+@keyframes pulse_once {
+  0% { box-shadow: #45bd45 0 0 0 0; }
+  75% { box-shadow: #45bd4500 0 0 0 16px;}
+}
+
+.vulnerable::before,
+.player_board::before,
+.enemy_board::before {
+  border-radius: 10px 10px 0 0;
+}
+
+.vulnerable::after,
+.player_board::after,
+.enemy_board::after {
+  border-radius: 0 0 10px 10px;
+}
+
+.player_board .grid td,
+.enemy_board .grid td {
+  width: 5vh;
+  height: 5vh;
+  border: 1px solid black;
+}
+
+.player_board .grid td {
+  cursor: initial;
+}
+
+.player,
+.enemy {
+  border-radius: 0;
+}
+
+.game_ship {
+  background-color: var(--liver-chestnut);
+}
+
+.enemy .cellhover:hover {
+  background-color: antiquewhite;
+}
+
+.enemy .cellhover.notyourturn:hover {
+  background-color: gainsboro;
+  opacity: 0.9;
+  cursor: initial;
+}
+
+.enemy .cell.na:hover {
+  background-color: gray;
+}
+
+.miss {
+  background-image: url("../images/game_water.png");
+  background-size: contain;
+  cursor: initial;
+}
+
+.hit {
+  background-color: rgb(194, 71, 71) !important;
+  cursor: initial;
+}
+
+.sunk {
+  background-color: rgb(69, 189, 69) !important;
+  cursor: initial;
+}
+
+.remaining_ships {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3vh;
+  height: 50vh;
+  width: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.remaining_ship {
+  border-collapse: collapse;
+  margin: 0.5vh;
+  height: 4vh;
+}
+
+.remaining_ship td {
+  border: 1px solid black;
+  width: 2vh;
+  height: 2vh;
+}
+
+.remaining_ship:not(.rem_sunk) td{
+  background-color: var(--liver-chestnut);
+}
+
+.rem_sunk {
+  background-color: rgb(69, 189, 69);
+}
+/* -------------- END GAME --------------- */
+
+.overlay {
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.endgame_modal {
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  position: relative;
+  width: 25vw;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.endgame_modal::before {
+  display: block;
+  content: "";
+  height: 1vh;
+  border-radius: 10px 10px 0 0;
+}
+
+.endgame_win::before {
+  background-color: green;
+}
+
+.endgame_defeat::before {
+  background-color: darkred;
+}
+
+.endgame_message {
+  margin: 2vh 3vh;
+  font-size: 20px;
+}
+
+.endgame_btngroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.endgame_btngroup button {
+  padding: 2vh 2vh;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  min-width: 10vw;
+  border: none;
+  transition: background-color 0.2s;
+  color: white;
+  margin: 2vh 0;
+}
+
+.endgame_newgame {
+  background-color: green;
+}
+
+.endgame_newgame:hover {
+  background-color: #3eb655;
+}
+
+.endgame_dashboard {
+  background-color: var(--secondary-color);
+}
+
+.endgame_dashboard:hover {
+  background-color: #ffc300;
+}
+
+/* ------------------------------------------- */
+
+.gotodashboard_div, .gridsetterinfo_div {
+  position: fixed;
+  bottom: 3vh;
+  width: 3em;
+  height: 3em;
+}
+
+.gotodashboard_div {
+  right: 3vw;
+}
+
+.gridsetterinfo_div {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pulse {
+  animation: pulse 1500ms infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: var(--coffee) 0 0 0 0; }
+  75% { box-shadow: #6C4C2F00 0 0 0 16px;}
+}
+
+.gotodashboard_btn, .gridsetterinfo_btn {
+  width: 60px;
+  height: 60px;
+  background: var(--coffee);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.gotodashboard_btn:hover, .gridsetterinfo_btn:hover {
+  background: var(--liver-chestnut);
+}
+
+.gridsetterinfo_btn img {
+  transform: scale(0.15);
+}
+
+.gotodashboard_btn img {
+  transform: scale(0.4);
+}
